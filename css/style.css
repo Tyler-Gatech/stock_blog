@@ -768,53 +768,59 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .ds {
 	background: #d6d9dc;
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
-.ds h4 {
+.ds_research {
+	background: #d6d9dc;
+    padding-top: 20px;
+    height: 1000px;
+}
+
+.ds,.ds_research h4 {
 	font-size: 14px;
 	font-weight: 700;
 }
 
-.ds i {
+.ds,.ds_research i {
 	font-size: 14px;
 }
 
-.ds .desc {
+.ds,.ds_research .desc {
 	border-bottom: 1px dotted #979797;
 	display: inline-block;
 	padding: 15px 0;
 	width: 100%;
 }
 
-.ds .desc:hover {
+.ds,.ds_research .desc:hover {
 	background: #ffffff;
 }
 
-.ds .thumb {
+.ds,.ds_research .thumb {
 	width: 30px;
 	margin: 0 10px 0 20px;
 	display: block;
 	float: left;
 }
 
-.ds .details {
+.ds,.ds_research .details {
 	width: 170px;
 	float: left;
 }
 
-.ds > .desc p {
+.ds,.ds_research > .desc p {
 	font-size: 11px;
 }
 
-.ds p > muted {
+.ds,.ds_research p > muted {
 	font-size: 9px;
 	text-transform: uppercase;
 	font-style: italic;
 	color: #666666
 }
 
-.ds a {
+.ds,.ds_research a {
 	color: #4ECDC4;
 }
 
