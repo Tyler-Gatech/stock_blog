@@ -156,7 +156,7 @@ a, a:hover, a:focus {
 }
 
 .btn-clear-g {
-	color: #48bcb4;
+	color: #fcb322;
 	background: transparent;
 	border-color: #fcb322;
 }
@@ -366,7 +366,7 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #4ECDC4;
+    background: #fcb322;
     color: #fff;
     display: block;
 
@@ -839,6 +839,10 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     display: inline-block;
     width: 100%;
     font-weight: 300;
+}
+
+.border-orange {
+    border-top: 5px solid #fcb322;
 }
 
 .custom-bar-chart {
@@ -2722,6 +2726,12 @@ ul.inbox-pagination li {
 }
 
 
+.img_gif {
+    text-align: center;
+    display:block;
+    margin:auto;
+}
+
 /*CHAT ROOM & LOBBY CONFIGURATION*/
 
 /*chat room*/
@@ -3361,7 +3371,7 @@ blockquote.twitter-tweet {
 
 /*footer*/
 .site-footer {
-    background: #4ECDC4;
+    background: #fcb322;
     color: #fff;
     padding: 15px 0;
 }
