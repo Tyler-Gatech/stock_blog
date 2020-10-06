@@ -59,7 +59,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="index.html">home</a></li>
+          <li style="margin-top: 20px;"><a class="logout" href="index.html">home</a></li>
         </ul>
       </div>
     </header>
@@ -72,7 +72,7 @@
       <div id="sidebar" class="nav-collapse ">
 
           <ul class="sidebar-menu" id="nav-accordion">
-            <p class="centered"><a href="profile.html"><img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
+            <p class="centered"><a href="profile.html"><img src="img/tk-comic.jpg" class="img-circle" width="80" style="border-radius: 50%;"></a></p>
             <li class = "centered">
               <a href="https://www.twitter.com/TyStats">
                 <i class="fa fa-twitter" style = "color:lightskyblue;"></i>
@@ -81,7 +81,13 @@
                 </span>
               </a>
             </li>
-            <li>
+            <li class="sub-menu">
+              <a href="code_repo.html">
+                <i class="fa fa-desktop"></i>
+                <span>Code Repository </span>
+                </a>
+            </li>
+            <li class="sub-menu">
               <a  href="fantasy_stats.html">
                 <i class="fa fa-bar-chart-o"></i>
                 <span>Fantasy Stats</span>
@@ -115,12 +121,6 @@
                 <span>Bad Logic </span>
                 </a>
             </li>
-            <li class="sub-menu">
-              <a href="bad_logic.html">
-                <i class="fa fa-desktop"></i>
-                <span>Code Repository </span>
-                </a>
-            </li>
           </ul>
           <!-- sidebar menu end-->
 
@@ -138,7 +138,10 @@
           <div class="col-lg-9 main-chart">
             <!--CUSTOM CHART START -->
             <div class="border-head">
-              <h3>Full Code Here</h3> <p> Webscrape, Regex, and Animate the 1st 2020 Presedential Debate</p>
+                <h3>The 1st Presedential Debate 2020</h3> 
+              <a href="https://github.com/Tyler-Gatech/stock_blog/blob/master/r_code/debate_script/debate_script.R"></a>
+                <p id="bigger" style="text-decoration: underline; cursor: pointer; color: gray"> Github Code: Webscrape, Regex, and Animate</p>
+              </a>
                 
             </div>
             <!--custom chart end-->
@@ -214,7 +217,6 @@
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
         <a href="index.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
           </a>
       </div>
     </footer>

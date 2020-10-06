@@ -10178,6 +10178,11 @@ a.text-dark:hover, a.text-dark:focus {
   img {
     page-break-inside: avoid;
   }
+
+  .img-circle {
+    border-radius: 50%;
+  }
+
   p,
   h2,
   h3 {

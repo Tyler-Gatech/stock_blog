@@ -972,9 +972,9 @@ PANELS CONFIGURATIONS
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
     display: flex;
     padding-top: 15px;
-    padding-bottom: 6px;
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
     transition: 0.3s;
 
 }
@@ -2856,6 +2856,11 @@ a>.img_gif {
 
 }
 
+#bigger:hover{
+    opacity:.7;
+    transition: opacity .1s ease-in-out;
+
+}
 
 
 img.bottom {
