@@ -6511,6 +6511,12 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
+
+.justify-content-center {
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
 .center-block {
   display: block;
   margin-right: auto;

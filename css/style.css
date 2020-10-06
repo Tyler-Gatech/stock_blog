@@ -29,8 +29,9 @@ ul li {
 }
 
 a, a:hover, a:focus {
-    text-decoration: none;
+    text-decoration: none !important;
     outline: none;
+    cursor: pointer;
 }
 ::selection {
 
@@ -194,6 +195,10 @@ hr {
 
 .mb {
 	margin-bottom: 25px;
+}
+
+.mb-s {
+	margin-bottom: 10px;
 }
 
 
@@ -932,6 +937,17 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 	font-size: 16px;
 }
 
+.twitter-tag{
+    font-size: 20px; 
+    font-weight: bold; 
+    color: white; 
+    padding-right: 25px;
+}
+
+.twitter:hover{
+    cursor:pointer;
+}
+
 /* *************************************************************************************
 PANELS CONFIGURATIONS
 *************************************************************************************** */
@@ -941,6 +957,33 @@ PANELS CONFIGURATIONS
 .pn {
 	height: 250px;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.pn-center {
+	height: 250px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.pn-center2 {
+	height: 250px;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    transition: 0.3s;
+
+}
+
+.pn-center2:hover {
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    transition: 0.3s;
 }
 
 
@@ -983,7 +1026,7 @@ PANELS CONFIGURATIONS
 .darkblue-panel .darkblue-header {
 	background: transparent;
 	padding: 3px;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 }
 .darkblue-panel h1 {
 	color: #f2f2f2;
@@ -1022,6 +1065,43 @@ PANELS CONFIGURATIONS
 	font-weight: 100;
 }
 .green-panel p {
+	color: white;
+}
+
+/*Orange Panel*/
+.orange-panel {
+	text-align: center;
+	background: #fcb322;
+}
+.orange-panel .orange-header {
+	background: #fcb322;
+	padding: 3px;
+	margin-bottom: 15px;
+}
+
+.orange-panel .grey-header {
+	background: #444c57;
+	padding: 3px;
+	margin-bottom: 15px;
+}
+
+.orange-panel h5 {
+	color: white;
+	font-weight: 200;
+	margin-top: 10px;
+}
+
+.orange-panel .white-header h5 {
+	color: black;
+	font-weight: 200;
+	margin-top: 10px;
+}
+
+.orange-panel h3 {
+	color: white;
+	font-weight: 100;
+}
+.orange-panel p {
 	color: white;
 }
 
@@ -2727,9 +2807,93 @@ ul.inbox-pagination li {
 
 
 .img_gif {
-    text-align: center;
+    height: 90%;
+    width: 90%;
     display:block;
-    margin:auto;
+    padding:0;
+    margin:0;
+}
+
+.img_gif2 {
+    height: 90%;
+    width: 90%;
+   float:center; 
+   opacity: .8;
+
+}
+
+.img_gif2:hover {
+   cursor: pointer;
+   opacity: 1;
+   transition: 0.3s;
+}
+
+a>.img_gif {
+    height: 90%;
+    width: 90%;
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+#cf img{
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    height: 90%;
+    width: 90%;
+    display:block;
+    padding:10px;
+    margin:0;
+
+    position:absolute;
+    left:10;
+}
+
+#cf img.top:hover {
+    opacity:0;
+
+}
+
+
+
+img.bottom {
+    height: 90%;
+    width: 90%;
+    display:block;
+    padding:0;
+    margin:0;
+    
+}
+
+
+
+
+
+#image {
+    height: 90%;
+    width: 90%;
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+a:link.image {
+    height: 90%;
+    width: 90%;
+    display:block;
+    padding:0;
+    margin:0;
+}
+
+.ignore-css{
+    all:unset !important;
+}
+
+
+div > a {
+    all:unset !important;
 }
 
 /*CHAT ROOM & LOBBY CONFIGURATION*/

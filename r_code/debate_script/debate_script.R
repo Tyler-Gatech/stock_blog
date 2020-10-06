@@ -5,18 +5,16 @@ library(lubridate)
 library(tidyverse)
 library(ggplot2)
 library(gganimate)
-
-install.packages("gifski")
 library(gifski)
-
-install.packages("extrafont")
 library(extrafont)
 
-fonts()
+library(rvest)
 
 script_url <- "https://www.rev.com/blog/transcripts/donald-trump-joe-biden-1st-presidential-debate-transcript-2020"
 
 html <- read_html(script_url)
+View( html%>% 
+        html_text())
 
 #define patterns for each speaker
 cw <- "Chris Wallace: \\(([0-9]{2}:)?[0-9]{2}:[0-9]{2}\\)"
@@ -183,7 +181,7 @@ p_turns <-
       axis.ticks = element_blank()
     ) + 
     #annotate("text", x = 1500, y = 535, label = paste0("Actual Time: 10:50", time_stamp_5), family =("mono")) +
-    ggtitle("Presidential Debate: Sep 29 2020 \n # of Turns Speaking") +
+    ggtitle("# of Turns Speaking") +
     ylab("") +
     xlab("") +
     scale_x_discrete(breaks=c(0,2000, 4000, 6000))
@@ -192,7 +190,7 @@ animate(p_turns +
           transition_reveal(real_time), fps = 20)
 
 
-setwd("./Desktop/websites/stock_blog/img/debate1_2020")
+#setwd("./Desktop/websites/stock_blog/img/debate1_2020")
 anim_save("turns_animated.gif")
 
 #plot total amount of speaking thorughout the evening
@@ -240,6 +238,7 @@ speak_length %>%
 
 animate(p_time + 
           transition_reveal(real_time), fps = 20)
+
 
 anim_save("time_animated.gif")
 
