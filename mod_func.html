@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>Bot: Amazon Product Review</title>
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+   <!--header start-->
+   <header class="header black-bg">
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--logo start-->
+    <a href="index.html" class="logo"><b>TY<span>STATS</span></b></a>
+    <!--logo end-->
+    <div class="nav notify-row" id="top_menu">
+      <!--  notification start -->
+      <ul class="nav top-menu">
+      </ul>
+      <!--  notification end -->
+    </div>
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+        <li><a class="logout" href="index.html">home</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
+     <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="https:///www.linkedin.com/in/tylerwknight">
+              <img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
+              <div class="centered" >
+                <a href="https:///www.linkedin.com/in/tylerwknight" style="color:orange">
+                  <h1>
+                    <i class= "fa fa-linkedin-square" style = "color:white; cursor:pointer;"></i>
+                  </h1>
+                </a>
+              </div>
+            
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-desktop"></i>
+                <span>Code Repo</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="lovevery.html">Amazon Review Scraper</a></li>
+                    <li><a href="moving_viz.html">Moving Timeline</a></li>
+                    <li><a href="mod_func.html">Modularize shiny function</a></li>
+                  </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-book"></i>
+                <span>White Papers</span>
+                </a>
+              <ul class="sub">
+                <li><a href="wp-pca.html">What is PCA?</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="about_me.html">
+                <i class="fa fa-info"></i>
+                <span>About Me</span>
+                </a>
+            </li>
+          </ul>
+          <!-- sidebar menu end-->
+
+      <!--sidebar end-->
+    </div>
+  </aside>
+     <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+          <div class="row content-panel">
+            <div class="col-lg-12">
+            <div class="row" style="background-color: whitesmoke;"></div>
+            <div class="col-lg-12 main-chart">
+              <!--CUSTOM CHART START -->
+              
+              <div class="row">
+                <h2 id="this-provides-an-example-of-how-to-modularize-a-function-in-shiny-using-r">How to modularize a function in shiny using R</h2>
+                    <h2 id="benefits">Benefits</h2>
+                    <p>Why would you want to modularize a function? </p>
+                    <ul>
+                    <li>Repeatable within and across different apps</li>
+                    <li>Ensures stability within your code by uniquely identifying similar actions</li>
+                    </ul>
+                    <h2 id="example-non-modular-function-this-is-showing-the-old-way-first-">Example - Non Modular Function (this is showing the old way first)</h2>
+                    <p>How would you typically bring a csv file into Shiny and display as a table?</p>
+                    <ul>
+                    <li>Let&#39;s say, for example, you want to upload a csv file into Shiny and create a reactive server code that provides a table of the data. </li>
+                    <li>Note: Reactive server code looks for a ui input and when it changes, performs some action</li>
+                    <li>Your ui code will typically look something like this</li>
+                    </ul>
+                    <p>``` ui &lt;- fluidPage(
+                        fileInput(&quot;file1&quot;, &quot;Choose CSV File&quot;,
+                            accept = c(
+                            &quot;text/csv&quot;,
+                            &quot;text/comma-separated-values,text/plain&quot;,
+                            &quot;.csv&quot;)
+                            ),
+                            mainPanel(
+                        tableOutput(&quot;contents&quot;)
+                        )
+                    )</p>
+                    <pre><code>
+                    - The code <span class="hljs-keyword">above</span> creates an output called input$file1 (we'll <span class="hljs-keyword">get</span> <span class="hljs-keyword">back</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> tableOutput piece)
+                    - After this, you need <span class="hljs-keyword">to</span> do something <span class="hljs-keyword">on</span> <span class="hljs-keyword">the</span> server side <span class="hljs-keyword">with</span> this information (see <span class="hljs-keyword">below</span>)
+                    - So you would create server code <span class="hljs-keyword">that</span> reacts <span class="hljs-keyword">to</span> input$file1
+                    - renderTable (<span class="hljs-keyword">below</span>) <span class="hljs-keyword">is</span> <span class="hljs-keyword">the</span> reactive function <span class="hljs-keyword">in</span> this case, <span class="hljs-keyword">and</span> therefore when <span class="hljs-keyword">it</span> notices input$file1 <span class="hljs-keyword">it</span> automatically performs an action
+                    </code></pre><p>server &lt;- function(input, output) {
+                    output$contents &lt;- renderTable({
+                        inFile &lt;- input$file1</p>
+                    <pre><code><span class="hljs-keyword">if</span> (is.null(<span class="hljs-keyword">inFile</span>))
+                    <span class="hljs-built_in">return</span>(NULL)
+
+                    <span class="hljs-keyword">read</span>.csv(<span class="hljs-keyword">inFile</span><span class="hljs-variable">$datapath</span>, header = <span class="hljs-keyword">input</span><span class="hljs-variable">$header</span>)
+                    </code></pre><p>  })
+                    }</p>
+                    <pre><code>
+                    The code above says:
+                    - look <span class="hljs-keyword">for</span> input$file1 (<span class="hljs-built_in">from</span> our ui) 
+                    - inFile: grabs <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span> information
+                    - <span class="hljs-built_in">read</span>.csv: reads <span class="hljs-keyword">the</span> data <span class="hljs-keyword">into</span> r dataframe
+                    - renderTable: creates <span class="hljs-keyword">a</span> shiny object <span class="hljs-keyword">in</span> table <span class="hljs-built_in">format</span> (this literally creates <span class="hljs-keyword">the</span> html) <span class="hljs-keyword">and</span> calls <span class="hljs-keyword">it</span> <span class="hljs-string">"contents"</span> 
+
+
+                    Now looking back <span class="hljs-built_in">to</span> tableOutput part <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> UI again
+
+                    ``` ui &lt;- fluidPage(
+                        fileInput(<span class="hljs-string">"file1"</span>, <span class="hljs-string">"Choose CSV File"</span>,
+                            accept = c(
+                            <span class="hljs-string">"text/csv"</span>,
+                            <span class="hljs-string">"text/comma-separated-values,text/plain"</span>,
+                            <span class="hljs-string">".csv"</span>)
+                            ),
+                            mainPanel(
+                        tableOutput(<span class="hljs-string">"contents"</span>)
+                        )
+                    )
+                    </code></pre><ul>
+                    <li>tableOutput renders the html from the server object &quot;contents&quot;</li>
+                    </ul>
+                    <p>This is the non modular way of inputing a csv into R Shiny, but what if you wanted to input another csv? </p>
+                    <ul>
+                    <li>You can repeat the code. But, this starts to get messy, especially for functions you perform repeatedly</li>
+                    <li>You can write a function. But, the file names in the functinos are not uniuqe (remember file1 above?). Therefore, everytime you run your function, it will mess up the all the tables you created, because those tables are reactive. </li>
+                    <li>The solution? Create a modular function which provides a namespace within the function. </li>
+                    <li>The namespace is a unique id that is called in the function, and prevents your reactive code from running unless the namespace is explictly called. </li>
+                    </ul>
+                    <h2 id="example-modular-function-this-is-the-new-way-">Example - Modular Function (this is the new way)</h2>
+                    <p>How can you create a function for brining in csv files that can be repeated within an app and easily shared across apps?</p>
+                    <ul>
+                    <li>Create modular functions and call the modular functions in the ui and server environment. </li>
+                    <li>In order to call functions in the ui and server environment I create a file called global.R</li>
+                    <li>global.R files are automatically called ran when an app is opened</li>
+                    <li>Within the global.r file call (using source(function)) any function that you want ran </li>
+                    </ul>
+                    <p>Let&#39;s look at the modular functions</p>
+                    <p>csv_input_ui</p>
+                    <pre><code>csv_input_ui &lt;- function(id, <span class="hljs-keyword">label</span><span class="bash"> = <span class="hljs-string">"CSV file"</span>) {
+                    </span>  <span class="hljs-comment"># Create a namespace function using the provided id</span>
+                    ns &lt;- NS(id)
+
+                    tagList(
+                        <span class="hljs-comment">#assigns the file tag to the namespace provided in the function above</span>
+                        fileInput(ns(<span class="hljs-string">"file"</span>), <span class="hljs-keyword">label</span><span class="bash">),
+                    </span>    checkboxInput(ns(<span class="hljs-string">"heading"</span>), <span class="hljs-string">"Has heading"</span>),
+                        selectInput(ns(<span class="hljs-string">"quote"</span>), <span class="hljs-string">"Quote"</span>, c(
+                        <span class="hljs-string">"None"</span> = <span class="hljs-string">""</span>,
+                        <span class="hljs-string">"Double quote"</span> = <span class="hljs-string">"\""</span>,
+                        <span class="hljs-string">"Single quote"</span> = <span class="hljs-string">"'"</span>
+                        ))
+                    )
+                    }
+                    </code></pre><ul>
+                    <li>This is very similar to our original ui code (above at top)</li>
+                    <li>it creates an input$file</li>
+                    <li>The unique piece is the ns part , that now allows the user to define a name space and repeat the function with a unique id</li>
+                    <li>Once again, this is necessary for reactive coding, because we don&#39;t want the reactive code to change every output each time we upload a new dataset</li>
+                    </ul>
+                    <p>Now, looking at the ui</p>
+                    <pre><code>shinyUI(<span class="hljs-name">fluidPage</span>(
+
+
+                                <span class="hljs-name">csv_input_ui</span>(<span class="hljs-string">"datafile"</span>, <span class="hljs-string">"User data (.csv format)"</span>),
+                                dataTableOutput(<span class="hljs-string">"table"</span>),
+
+                                csv_input_ui(<span class="hljs-string">"datafile2"</span>, <span class="hljs-string">"User data (.csv format)"</span>),
+                                dataTableOutput(<span class="hljs-string">"table2"</span>)
+                            )
+                        )
+                    </code></pre><ul>
+                    <li>This code is very clean and simple. </li>
+                    <li>csv_input_ui is running the function above, and for the first iteration gives it the namespace &quot;datafile1&quot;, and for the 2nd iteration &quot;datafile2&quot;</li>
+                    <li>this creates input$file, but with a unique namespace</li>
+                    </ul>
+                    <p>Now viewing the server function </p>
+                    <pre><code>csv_input_serv &lt;- <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(input, output, session, stringsAsFactors)</span> </span>{
+                    <span class="hljs-comment"># The selected file, if any</span>
+                    userFile &lt;- reactive({
+                        <span class="hljs-comment"># If no file is selected, don't do anything</span>
+                        validate(need(input$file, message = <span class="hljs-keyword">FALSE</span>))
+                        input$file
+                    })
+
+                    <span class="hljs-comment"># The user's data, parsed into a data frame</span>
+                    dataframe &lt;- reactive({
+                        read.csv(userFile()$datapath,
+                                header = input$heading,
+                                quote = input$quote,
+                                stringsAsFactors = stringsAsFactors)
+                    })
+
+                    <span class="hljs-comment"># Return the reactive that yields the data frame</span>
+                    <span class="hljs-keyword">return</span>(dataframe)
+                    }
+                    </code></pre><ul>
+                    <li>Note: There is no reference to the namespace here, it is simply running a basic function</li>
+                    <li>The namespace (e.g. &quot;datafile&quot;) is made explicit in the server.R file</li>
+                    </ul>
+                    <p>The server.R file </p>
+                    <pre><code>
+                        datafileA &lt;- callModule(csv_input_serv, <span class="hljs-string">"datafile"</span>,
+                                            stringsAsFactors = FALSE)
+
+                        output<span class="hljs-symbol">$</span><span class="hljs-keyword">table</span> &lt;- renderDataTable({
+                            datafileA()
+                        })
+                    </code></pre><ul>
+                    <li>The callModule function runs the csv_input_serv function within the specified nameSpace</li>
+                    <li>renderDataTable creates our html for our ui</li>
+                    </ul>
+                    <p>Back to the ui </p>
+                    <pre><code><span class="hljs-function"><span class="hljs-title">dataTableOutput</span><span class="hljs-params">(<span class="hljs-string">"table"</span>)</span></span>
+                    </code></pre><p>So there you have it. It&#39;s a little complex at first, but once you get the hang of it, this becomes really valuable</p>
+                    <h2 id="key-benefits">Key Benefits</h2>
+                    <ul>
+                    <li>Repeatable Code (we can put these functions in any R Shiny App) </li>
+                    <li>Streamlined code (we only have to call the functions in the Ui and Server)</li>
+                    <li>Stable environment (we don&#39;t have to worry about a reactive element reacting to the wrong element) </li>
+                    </ul>
+                    <p>This maybe an unecessary example, loading multiple csv&#39;s, but it illustrates the point clearly. Download the app and try running it yourself</p>
+                    <h2 id="basic-process-flow-of-the-modular-app">Basic Process Flow of the Modular App</h2>
+                    <ul>
+                    <li>ui.R calls the csv_input_ui function</li>
+                    <li>namespace and input$file is created</li>
+                    <li>server.R reacts and runs csv_input_serv function for the specified namespace</li>
+                    <li>ui displays output of server.R</li>
+                    </ul>
+
+              
+              <!--custom chart end-->
+              
+                    
+                   
+                <!--/ col-md-4 -->
+                <!-- /col-md-4 -->
+              
+              <!-- /row -->
+            </div>
+            <!-- /col-lg-9 END SECTION MIDDLE -->
+            <!-- **********************************************************************************************************************************************************
+                RIGHT SIDEBAR CONTENT
+                *********************************************************************************************************************************************************** -->
+   
+            <!-- /col-lg-3 -->
+          </div>
+          <!-- /row -->
+        </section>
+      </section>
+      <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <div class="credits">
+          Created by TyStats
+        </div>
+        <a href="faq.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="lib/common-scripts.js"></script>
+  <!--script for this page-->
+
+</body>
+
+</html>
