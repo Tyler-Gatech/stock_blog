@@ -59,6 +59,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
+          
           <li><a class="logout" href="index.html">home</a></li>
         </ul>
       </div>
@@ -72,53 +73,39 @@
       <div id="sidebar" class="nav-collapse ">
 
           <ul class="sidebar-menu" id="nav-accordion">
-            <p class="centered"><a href="profile.html"><img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
-            <li class = "centered">
-              <a href="https://www.twitter.com/TyStats">
-                <i class="fa fa-twitter" style = "color:lightskyblue;"></i>
-                <span class= "twitter-tag">
-                  @TyStats
-                </span>
-              </a>
-            </li>
+            <p class="centered"><a href="https:///www.linkedin.com/in/tylerwknight">
+              <img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
+              <div class="centered" >
+                <a href="https:///www.linkedin.com/in/tylerwknight" style="color:orange">
+                  <h1>
+                    <i class= "fa fa-linkedin-square" style = "color:white; cursor:pointer;"></i>
+                  </h1>
+                </a>
+              </div>
+            
             <li class="sub-menu">
-              <a href="code_repo.html">
+              <a href="javascript:;">
                 <i class="fa fa-desktop"></i>
-                <span>Code Repository </span>
+                <span>Code Repo</span>
                 </a>
-            </li>
-            <li class="sub-menu">
-              <a  href="fantasy_stats.html">
-                <i class="fa fa-bar-chart-o"></i>
-                <span>Fantasy Stats</span>
-              </a>
-            </li>
-            <li class="sub-menu">
-              <a href="current_events.html">
-                  <i class="fa fa-book"></i>
-                  <span>Current Events</span>
-              </a>
-            </li>
-            <li class="sub-menu">
-              <a href="whos_talking.html">
-                <i class="fa fa-twitter-square"></i>
-                <span>Who's Talking?</span>
-                </a>
+              <ul class="sub">
+                <li><a href="lovevery.html">Amazon Review Scraper</a></li>
+                <li><a href="moving_viz.html">Moving Timeline</a></li>
+              </ul>
             </li>
             <li class="sub-menu">
               <a href="javascript:;">
                 <i class="fa fa-book"></i>
-                <span>Stock Research</span>
+                <span>White Papers</span>
                 </a>
               <ul class="sub">
-                <li><a href="research_ivr.html">IVR</a></li>
-                <li><a href="blog_index.html">JMIA</a></li>
+                <li><a href="wp-pca.html">What is PCA?</a></li>
               </ul>
             </li>
             <li class="sub-menu">
-              <a href="bad_logic.html">
-                <i class="fa fa-thumbs-down"></i>
-                <span>Bad Logic </span>
+              <a href="about_me.html">
+                <i class="fa fa-info"></i>
+                <span>About Me</span>
                 </a>
             </li>
           </ul>
@@ -134,23 +121,123 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-9 main-chart">
+        <div class="row content-panel">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-6 right-divider  profile-text">
+                <h1 style="color:orange">Tyler Knight</h1>
+                <h2>Welcome to my portfolio website!</h2>
+                <h5>I created this website to:</h5>
+                <ol>  
+                  <li>Showcase my Work - <a href="code_repo.html">See Code Repo</a></li>
+                  <li>Learn HTML/CSS coding - <a href="index.html">See Website</a> <i class="fa fa-smile-o"></i></li>
+                  <li>Document Research - <a href="code_repo.html">See White Papers</a></li>
+                </ol>
+                <p> If you have any questions about my work, or wish to dialogue, feel free to email me. Thanks!</p>
+                <p><button class="btn btn-theme"><i class="fa fa-envelope"></i> <a href="mailto:knight.tyler@gmail.com" style="color:white">Contact TyStats</a> </button></p>
+              </div>
+              <div class="col-md-6 border-head profile-text">
+                <h2 style="color:orange; border-bottom:none">Portfolio by the Numbers:</h2>
+                <div class="row centered mt mb">
+                  <div class="col-sm-4">
+                    <h1><i class="fa fa-desktop"></i></h1>
+                    <h3 style="border-bottom:none">2</h3>
+                    <h6>Code Repos</h6>
+                  </div>
+                  <div class="col-sm-4">
+                    <h1><i class="fa fa-book"></i></h1>
+                    <h3 style="border-bottom:none">1</h3>
+                    <h6>White Papers</h6>
+                  </div>
+                </div>
+              <!-- /col-md-4 -->
+              
+              <!-- /col-md-4 -->
+
+              <!-- /col-md-4 -->
+            </div>
+            <!-- /row -->
+          </div>
+          <div class="row" style="background-color: whitesmoke;"></div>
+          <div class="col-lg-12 main-chart">
             <!--CUSTOM CHART START -->
-            <div class="border-head">
-              <h3>STAT OF THE DAY </h3>
-              <h5>Presidential Debate: September 29 2020</h5>
-              <div class="col-md-6 border-head">
-                <hr class="border-orange">
-                <img src="img/debate1_2020/turns_animated.gif" width="300"  alt="" class ="img_gif">
+            <div class="border-head profile-text">
+              <h3>Pinned Data Viz </h3>
+              <div class="col-md-6 border-head" style ="margin-right:1">
+                <h4 style = "color:grey;">Vice Presidential Debate Analysis</h4>
+                <h5>October 7, 2020</h5>
+                <p>
+                  I've come to realize that text analysis is probably the most frequent type of data analysis I perform, both professionally 
+                  and personally. There are a few reasons why I think this has occurred:
+                  <ol>
+                    <li>
+                      <span style = "font-weight: bold; color:orange">Data Availability:</span> Text data is everywhere. It's in contracts, tweets, chat transcripts, websites, etc. There is an unlimited supply of text data. 
+                    </li>
+                  </li>
+                  <li>
+                    <span style = "font-weight: bold; color:orange">Creative Analysis:</span> 
+                    Unlike numeric data, where there are often standard analyses performed (e.g. mean, deviation, correlation, etc.), text data lends
+                    itself to creative intrepretation. You have to think creatively about the story you are wish to tell from the text and how to quantify that story.
+                    I enjoy the creative challenge of combining mathematics with free form text. 
+                  </li>
+                    <li>
+                      <span style = "font-weight: bold; color:orange">Regex:</span> 
+                      Obtaining data from text elements is challenging, Fortunately there is regex. Regex gives you the power
+                      to obtain whatever any data element you wish from text, as long as you can identify the pattern. For example, in the Data Viz to the right, 
+                      I used regex to grab:
+                      <ul>
+                        <li>- The time speakers started/stopped speaking</li>
+                        <li>- To identify the speaker of a certain phrase</li>
+                      </ul> 
+                      Most casual data analysts are used to working with structured tables, and thus I find people often reach out to me
+                      to parse more complicated/unstructured text data. 
+
+                  </ol>
+                  <br>
+                  <h4 style = "color:grey;">About the Data Viz </h4>
+                  The chart on the right showcases a custom data visualization built entirely in R. 
+                  The chart illustrates the total amount of time each candidate spoke during the VP Debate as the night progressed. 
+                  I particularly like the option in R to create an animated graph, since this data shows a process over-time. 
+                  <br>
+                  <br>
+                    Another great feature in R is the ability to create multiple graphs on the same page. 
+                  The bar graph in the top left shows running time gap (hours: minutes) between the two speakers. 
+                  This helps the viewer to better quantify the difference between the two lines. 
+
+                  <br>
+                </p>
               </div>
               <div class="col-md-6 mb">
-                <hr class="border-orange">
-                <img src="img/debate1_2020/time_animated.gif" width="300"  alt="" class ="img_gif">
+                <h4 style = "color:grey;">How I built this visualizaiton</h4>
+                <p>
+                  <ol>
+                    <li><span style = "color:orange;">Webscrape</span> the transcript 
+                      <a href="https://www.rev.com/blog/transcripts/kamala-harris-mike-pence-2020-vice-presidential-debate-transcript">
+                        (source)</a>
+                    </li>
+                    <li><span style = "color:orange;">Regex</span> to parse out time stamps and speakers</li>
+                    <li>Custom <span style = "color:orange;">data visualization</span> </li>
+                  </ol>
+                </p>
+                <p style = "cursor:pointer">
+                  <a href="https://github.com/Tyler-Gatech/stock_blog/blob/master/r_code/debate_script/debate_script_vp.R">
+                      TyStats Full Code at @github
+                  </a>
+                </p>
+               <p><button class="btn" style="cursor:pointer"><i class="fa fa-minus" style = "color:red"></i> Mike Pence &emsp;  
+                <i class="fa fa-minus" style = "color:blue"></i> Kamala Harris</button></p>
+                </p>
+                <img src="img/debate_vp_2020/vp_time_animated.gif" width="300"  alt="" class ="img_gif img-centered">
+                
+                  <br>
+                  <p>
+                    The key takeaway from this data visualization is that the speakers went back and forth througout
+                    the first half of the debate. But <span>Kamala Harris</span> clearly separated towards the end of the debate.
+                  </p> 
               </div>
             </div>
             <div class="row">
-              
+
             
             <!--custom chart end-->
             
@@ -176,16 +263,9 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>TyStats</strong>. All Rights Reserved
         </p>
-        <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+
         </div>
         <a href="index.html#" class="go-top">
           </a>
@@ -210,22 +290,7 @@
   <script src="lib/zabuto_calendar.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      var unique_id = $.gritter.add({
-        // (string | mandatory) the heading of the notification
-        title: 'Welcome to Ty Stats!',
-        // (string | mandatory) the text inside the notification
-        text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
-        // (string | optional) the image to display on the left
-        image: 'img/tk-comic.jpg',
-        // (bool | optional) if you want it to fade out on its own or just sit there
-        sticky: false,
-        // (int | optional) the time you want it to be alive for before fading out
-        time: 8000,
-        // (string | optional) the class name you want to apply to that specific message
-        class_name: 'my-sticky-class'
-      });
 
-      return false;
     });
   </script>
   <script type="application/javascript">

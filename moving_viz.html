@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>Bot: Amazon Product Review</title>
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+   <!--header start-->
+   <header class="header black-bg">
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--logo start-->
+    <a href="index.html" class="logo"><b>TY<span>STATS</span></b></a>
+    <!--logo end-->
+    <div class="nav notify-row" id="top_menu">
+      <!--  notification start -->
+      <ul class="nav top-menu">
+      </ul>
+      <!--  notification end -->
+    </div>
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+        <li><a class="logout" href="index.html">home</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
+     <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="https:///www.linkedin.com/in/tylerwknight">
+              <img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
+              <div class="centered" >
+                <a href="https:///www.linkedin.com/in/tylerwknight" style="color:orange">
+                  <h1>
+                    <i class= "fa fa-linkedin-square" style = "color:white; cursor:pointer;"></i>
+                  </h1>
+                </a>
+              </div>
+            
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-desktop"></i>
+                <span>Code Repo</span>
+                </a>
+              <ul class="sub">
+                <li><a href="lovevery.html">Amazon Review Scraper</a></li>
+                <li><a href="moving_viz.html">Moving Timeline</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-book"></i>
+                <span>White Papers</span>
+                </a>
+              <ul class="sub">
+                <li><a href="wp-pca.html">What is PCA?</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="about_me.html">
+                <i class="fa fa-info"></i>
+                <span>About Me</span>
+                </a>
+            </li>
+          </ul>
+          <!-- sidebar menu end-->
+
+      <!--sidebar end-->
+    </div>
+  </aside>
+     <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+          <div class="row content-panel">
+            <div class="col-lg-12">
+            <div class="row" style="background-color: whitesmoke;"></div>
+            <div class="col-lg-12 main-chart">
+              <!--CUSTOM CHART START -->
+              <div class="border-head profile-text">
+                <h3>Vice Presidential Debate Analysis</h3>
+                <div class="col-md-6 border-head" style ="margin-right:1">
+                  <h5>October 7, 2020</h5>
+                  <p>
+                    I've come to realize that text analysis is probably the most frequent type of data analysis I perform, both professionally 
+                    and personally. There are a few reasons why I think this has occurred:
+                    <ol>
+                      <li>
+                        <span style = "font-weight: bold; color:orange">Data Availability:</span> Text data is everywhere. It's in contracts, tweets, chat transcripts, websites, etc. There is an unlimited supply of text data. 
+                      </li>
+                    </li>
+                    <li>
+                      <span style = "font-weight: bold; color:orange">Creative Analysis:</span> 
+                      Unlike numeric data, where there are often standard analyses performed (e.g. mean, deviation, correlation, etc.), text data lends
+                      itself to creative intrepretation. You have to think creatively about the story you are wish to tell from the text and how to quantify that story.
+                      I enjoy the creative challenge of combining mathematics with free form text. 
+                    </li>
+                      <li>
+                        <span style = "font-weight: bold; color:orange">Regex:</span> 
+                        Obtaining data from text elements is challenging, Fortunately there is regex. Regex gives you the power
+                        to obtain whatever any data element you wish from text, as long as you can identify the pattern. For example, in the Data Viz to the right, 
+                        I used regex to grab:
+                        <ul>
+                          <li>- The time speakers started/stopped speaking</li>
+                          <li>- To identify the speaker of a certain phrase</li>
+                        </ul> 
+                        Most casual data analysts are used to working with structured tables, and thus I find people often reach out to me
+                        to parse more complicated/unstructured text data. 
+  
+                    </ol>
+                    <br>
+                    <h4 style = "color:grey;">About the Data Viz </h4>
+                    The chart on the right showcases a custom data visualization built entirely in R. 
+                    The chart illustrates the total amount of time each candidate spoke during the VP Debate as the night progressed. 
+                    I particularly like the option in R to create an animated graph, since this data shows a process over-time. 
+                    <br>
+                    <br>
+                      Another great feature in R is the ability to create multiple graphs on the same page. 
+                    The bar graph in the top left shows running time gap (hours: minutes) between the two speakers. 
+                    This helps the viewer to better quantify the difference between the two lines. 
+  
+                    <br>
+                  </p>
+                </div>
+                <div class="col-md-6 mb">
+                  <h4 style = "color:grey;">How I built this visualizaiton</h4>
+                  <p>
+                    <ol>
+                      <li><span style = "color:orange;">Webscrape</span> the transcript 
+                        <a href="https://www.rev.com/blog/transcripts/kamala-harris-mike-pence-2020-vice-presidential-debate-transcript">
+                          (source)</a>
+                      </li>
+                      <li><span style = "color:orange;">Regex</span> to parse out time stamps and speakers</li>
+                      <li>Custom <span style = "color:orange;">data visualization</span> </li>
+                    </ol>
+                  </p>
+                  <p style = "cursor:pointer">
+                    <a href="https://github.com/Tyler-Gatech/stock_blog/blob/master/r_code/debate_script/debate_script_vp.R">
+                        TyStats Full Code at @github
+                    </a>
+                  </p>
+                 <p><button class="btn" style="cursor:pointer"><i class="fa fa-minus" style = "color:red"></i> Mike Pence &emsp;  
+                  <i class="fa fa-minus" style = "color:blue"></i> Kamala Harris</button></p>
+                  </p>
+                  <img src="img/debate_vp_2020/vp_time_animated.gif" width="300"  alt="" class ="img_gif img-centered">
+                  
+                    <br>
+                    <p>
+                      The key takeaway from this data visualization is that the speakers went back and forth througout
+                      the first half of the debate. But <span>Kamala Harris</span> clearly separated towards the end of the debate.
+                    </p> 
+                </div>
+              </div>
+              <div class="row">
+  
+              
+              <!--custom chart end-->
+              
+                    
+                   
+                <!--/ col-md-4 -->
+                <!-- /col-md-4 -->
+              
+              <!-- /row -->
+            </div>
+            <!-- /col-lg-9 END SECTION MIDDLE -->
+            <!-- **********************************************************************************************************************************************************
+                RIGHT SIDEBAR CONTENT
+                *********************************************************************************************************************************************************** -->
+   
+            <!-- /col-lg-3 -->
+          </div>
+          <!-- /row -->
+        </section>
+      </section>
+      <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <div class="credits">
+          Created by TyStats
+        </div>
+        <a href="faq.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="lib/common-scripts.js"></script>
+  <!--script for this page-->
+
+</body>
+
+</html>

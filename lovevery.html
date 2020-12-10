@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>Bot: Amazon Product Review</title>
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+   <!--header start-->
+   <header class="header black-bg">
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--logo start-->
+    <a href="index.html" class="logo"><b>TY<span>STATS</span></b></a>
+    <!--logo end-->
+    <div class="nav notify-row" id="top_menu">
+      <!--  notification start -->
+      <ul class="nav top-menu">
+      </ul>
+      <!--  notification end -->
+    </div>
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+        <li><a class="logout" href="index.html">home</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
+  <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="https:///www.linkedin.com/in/tylerwknight">
+              <img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
+              <div class="centered" >
+                <a href="https:///www.linkedin.com/in/tylerwknight" style="color:orange">
+                  <h1>
+                    <i class= "fa fa-linkedin-square" style = "color:white; cursor:pointer;"></i>
+                  </h1>
+                </a>
+              </div>
+            
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-desktop"></i>
+                <span>Code Repo</span>
+                </a>
+              <ul class="sub">
+                <li><a href="lovevery.html">Amazon Review Scraper</a></li>
+                <li><a href="moving_viz.html">Moving Timeline</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-book"></i>
+                <span>White Papers</span>
+                </a>
+              <ul class="sub">
+                <li><a href="wp-pca.html">What is PCA?</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="about_me.html">
+                <i class="fa fa-info"></i>
+                <span>About Me</span>
+                </a>
+            </li>
+          </ul>
+          <!-- sidebar menu end-->
+
+      <!--sidebar end-->
+    </div>
+  </aside>
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt mb">
+          <div class="col-lg-12">
+            <br>
+            <div class="dmbox">
+              <div class="top-menu">
+                <ul class="nav top-menu">
+                  <li><a class="logout" href="https://github.com/Tyler-Gatech/Bots/tree/master/Amazon_Customer_Reviews/Code">Full Code @Github</a></li>
+                </ul>
+              </div>
+              <span class="photo"><img alt="lovevery_logo1" src="img/lovevery_logo1.png" ></span>
+              <h3>How is our product performing on Amazon?</h3>
+              <span class="photo"><img alt="lovevery_logo1" src="img/lovevery_playgym.png" width="200" height="300"></span>
+              <h3 style ="text-align:left">Scenario:</h3>
+              <p style="text-align:left">
+                You work in the analytics department of a small company. 
+                The company has been wildly successful in selling their most recent product, "The Play Gym", via Amazon.com. The Play Gym is "everything your child needs 
+                in an activity gym from batting to teething to learning to focus for a whole year of play."
+                Now, in order to research new product ideas, your boss would like to 
+                know what else your customers purchase on Amazon. So you login to your sql database, and query the information. 
+                Except, the database doesn't exist. You don't know what else your customers purchase, because they purchase products from other companies.
+                How would you compile that type of information about your customers.
+              </p>
+              <h3 style = "text-align:left">Initial Exploration:</h3>
+              <p style = "text-align:left;">You're a go-getter, so you decide to go to the product page on <a href="https://www.amazon.com/Lovevery-Developmental-Sensory-Development-Grounded/dp/B075R8BXXC/ref=sr_1_2?dchild=1&keywords=lovevery+play+gym&qid=1607622859&sr=8-2">Amazon.com</a> and
+                 do some digging into the customer reviews. Wow, over 2000 Reviews!
+                 You then click on one of the 
+                 customer's profile to see what other products they have reviewed to see if you can find correlated products. 
+                  When you click on their profile, the page says they have left over 50 reviews. 
+                  You do the math (2000 customers * 50 reviews. = "too many") and realize that is too many reviews to manually scan through. 
+                As a good data scientist, you create an automated solution.</p>
+                <h3 style = "text-align:left">Automated Solution</h3>
+                <p style = "text-align:left;">Develop a 2-Step plan to build a good database for further customer analysis.</p>
+                <ol style="text-align:left;">
+                  <li>Scrape all of the reviews from Amazon and gather a list of all the customer ids</li>
+                  <li>Using the customer ids from Step 1, gather a list of products purchased and reviewed by these customers
+                  </li>
+                </ol>
+                <h4 style="text-align:left;">Step 1. Web Scraper - Reviews</h4>
+                <p style = "text-align:left;">The web scraper is developed using R's rvest package. The full code, "Amazon_Review_Scraping_Lovery" is availble (<a href="https://github.com/Tyler-Gatech/Bots/tree/master/Amazon_Customer_Reviews/Code"> see github</a>) for the specified product. The scraper compiles a list of all the reviews, reviewers, and other relavant information, by going through each review page on Amazon. You can see the output here (<a href="https://github.com/Tyler-Gatech/Bots/tree/master/Amazon_Customer_Reviews/Data">via github</a>), "reviews_all_df_B075R8BXXC_2019-12-17.RDS"</p>
+                <h4 style="text-align:left;">Step 2. Web Scraper - Other Problems</h4>
+                <br>
+                <p style = "text-align:left;">Using the customers gathered from the Step 1, you then try to implement a similar solution to scrape each review that the users have left on other products. However, as mentinoed in the Initial Exploration, Amazon has made each customer's review profile load reviews dynamically as the end-user scrolls down. 
+                The rvest package can only scrape the reviews that are on the initial view of the web page.
+              </p>
+              <h4 style="text-align:left;">The Solution - Automation Bot (<a href="https://github.com/Tyler-Gatech/Bots/blob/master/Amazon_Customer_Reviews/Code/Amazon_User_Profile_Bot.R">via github</a>)</h4>
+              <p style = "text-align:left;">You need a solution that allows you to scrape the web page information dynamically. 
+              In this case, you need to be able to scroll down on the user 
+              review page to allow more reviews to load. The best solution is a bot. 
+              The bot allows you to control an automated browser (e.g. chrome) and
+               then can scrape the web page as new information loads. This allows you to see and scrape all 
+              the information on the web page, just as a human user would see, but obviously much faster.
+              </p>
+
+
+              
+               
+            </div>
+          </div>
+        </div>
+        <div class="row mt mb">
+          <div class="col-lg-12">
+            <br>
+            <div class="dmbox">
+              <div class="service-icon">
+              </div>
+              <h3>Scrape customer reviews via bot and plot sentiment</h3>
+              <span class="photo"><img alt="lovevery_logo1" src="img/lovevery_3steps.png" width="700" height="400"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row mt mb">
+          <div class="col-lg-12">
+            <br>
+            <div class="dmbox">
+              <div class="service-icon">
+              </div>
+              <h3>Visualize satisfied/disgruntled customers via wordcloud</h3>
+              <span class="photo"><img alt="lovevery_logo1" src="img/lovevery_word_cloud.png" width="700" height="400"></span>
+
+            </div>
+          </div>
+        </div>
+        <div class="row mt mb">
+          <div class="col-lg-12">
+            <br>
+            <div class="dmbox">
+              <div class="service-icon">
+              </div>
+              <h3>Scrape correlated product reviews from customers and determine most correlated products</h3>
+              <span class="photo"><img alt="lovevery_logo1" src="img/lovevery_corr.png" width="700" height="400"></span>
+            </div>
+          </div>
+        </div>
+        <!-- /row -->
+            <!-- end accordion -->
+          </div>
+          <!-- col-md-10 -->
+        </div>
+        <!--  /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <div class="credits">
+          Created by TyStats
+        </div>
+        <a href="faq.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="lib/common-scripts.js"></script>
+  <!--script for this page-->
+
+</body>
+
+</html>

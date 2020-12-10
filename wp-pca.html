@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title>White Paper - PCA</title>
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Template Name: Dashio
+    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+   <!--header start-->
+   <header class="header black-bg">
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--logo start-->
+    <a href="index.html" class="logo"><b>TY<span>STATS</span></b></a>
+    <!--logo end-->
+    <div class="nav notify-row" id="top_menu">
+      <!--  notification start -->
+      <ul class="nav top-menu">
+      </ul>
+      <!--  notification end -->
+    </div>
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+        <li><a class="logout" href="index.html">home</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+
+          <ul class="sidebar-menu" id="nav-accordion">
+            <p class="centered"><a href="https:///www.linkedin.com/in/tylerwknight">
+              <img src="img/tk-comic.jpg" class="img-circle" width="80"></a></p>
+              <div class="centered" >
+                <a href="https:///www.linkedin.com/in/tylerwknight" style="color:orange">
+                  <h1>
+                    <i class= "fa fa-linkedin-square" style = "color:white; cursor:pointer;"></i>
+                  </h1>
+                </a>
+              </div>
+            
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-desktop"></i>
+                <span>Code Repo</span>
+                </a>
+              <ul class="sub">
+                <li><a href="lovevery.html">Amazon Review Scraper</a></li>
+                <li><a href="moving_viz.html">Moving Timeline</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;">
+                <i class="fa fa-book"></i>
+                <span>White Papers</span>
+                </a>
+              <ul class="sub">
+                <li><a href="wp-pca.html">What is PCA?</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="about_me.html">
+                <i class="fa fa-info"></i>
+                <span>About Me</span>
+                </a>
+            </li>
+          </ul>
+          <!-- sidebar menu end-->
+
+      <!--sidebar end-->
+    </div>
+  </aside>
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <div class="row mt mb">
+          <div class="col-lg-12">
+            <br>
+            <div class="dmbox">
+              <div class="service-icon">
+                <a class="" href="wp-pca.html#"><i class="dm-icon fa fa-question fa-3x"></i></a>
+              </div>
+              <h3>What is PCA?</h3>
+              <p style="text-align:left">
+                PCA Stands for Principal Component Analysis, and is a commonly used technique in
+                 modeling to reduce dimensionality and better explain the relationships between variables
+                  in a dataset. The output of PCA are the principal components, which are linear
+                   transformations of the original dataset. The number of principal components
+                    will match the number of variables (i.e. columns)  in the original dataset
+                     and will also have the same number of records (i.e. rows), as the original dataset. 
+                     However, there is not a 1:1 mapping from original variables to principal components, 
+                     since each principal component is a linear transformation of the entire data set. 
+                     The principal components are naturally ordered by the amount of variance they explain 
+                     in the original data set, from most to least. I.e., the 1st principal component explains 
+                     the most variance in the dataset and the last principal component explains
+                      the least amount of variance. 
+
+                      Before looking into how PCA works, let’s demonstrate a quick example using the BreastCancer 
+                      dataset provided by University of Wisconsin (available in the ‘mlbench’ package in R). 
+                      The entire R code I wrote is available here (source). 
+                      Below is a view of the first few columns of the original dataset.
+                       Note there is one ID column, 9 independent variables,
+                        and one dependent variable (“class”). 
+
+               </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt mb">
+          <div class="col-lg-12">
+            <br>
+            <div class="dmbox">
+              <div class="service-icon">
+              </div>
+              <h3>The Magic of PCA and Eigenvectors</h3>
+              <p style="text-align:left">
+                Below are 3 plots:
+                <ol style = "text-align:left">
+                  <li>Plot1: Optimally Bad. Low variance when mapped to line (note the spread on the line). High Residuals (distance from the line)</li>
+                  <li>Plot2: Kind of Bad. Medium Variance. Medium Residuals</li>
+                  <li>Plot3 (The eigenvector transformation!): Optimally Good. High variance = Low Residuals</li>
+                </ol>
+                <span class="photo"><img alt="avatar" src="img/eigen_rotate.png" width="800" height="400"></span> 
+                <br>
+                It's actually a fact, that when you maximize  variance, you minimize orthogonal (perpendicular to the line) residuals. The more variance you can provide, the better explanor of variables. Imagine predicting cars value based on their number of wheels. If they all have 4 wheels (low variance), that would be a very bad predictor. PCA provides linear transformations of datasets that maximize variance and minimize residuals.
+               </p>
+            </div>
+          </div>
+        </div>
+        <!-- /row -->
+        <div class="row content-panel">
+          <h4> Click to expand section</h4>
+          <div class="col-md-10 col-md-offset-1 mt mb">
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="wp-pca.html#collapseOne">
+                    <h3 style="cursor:pointer">> 1. PCA Example Dataset</h3>
+                    </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner">
+                    <p>&emsp; Before looking into how PCA works, let’s demonstrate a quick example using the BreastCancer 
+                      dataset provided by University of Wisconsin (available in the ‘mlbench’ package in R). 
+                      The entire R code I wrote is available here. (link) 
+                      Below is a view of the first few columns of the original dataset. 
+                      Note there is one ID column, 9 independent variables, 
+                      and one dependent variable (“class”). 
+                    </p>
+                      <br>
+                          <div class="row mt">
+                            <div class="col-lg-12">
+                              <div class="">
+                                <section id="unseen">
+                                  <table class="table table-bordered table-striped ">
+                                    <thead>
+                                      <tr>
+
+
+
+                                        <th>ID</th>
+                                        <th class="numeric">Cl.thickness</th>
+                                        <th class="numeric">Cell.size</th>
+                                        <th class="numeric">Cell.shape</th>
+                                        <th class="numeric">Marg.adhesion</th>
+                                        <th class="numeric">Epith.c.size</th>
+                                        <th class="numeric">Bare.nuclei</th>
+                                        <th class="numeric">Bl.cromatin</th>
+                                        <th class="numeric">Normal.nucleoli</th>
+                                        <th class="numeric">Mitoses</th>
+                                        <th >class</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td class="numeric">5</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">2</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td>benign</td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td class="numeric">5</td>
+                                        <td class="numeric">4</td>
+                                        <td class="numeric">4</td>
+                                        <td class="numeric">5</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">10</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">2</td>
+                                        <td class="numeric">1</td>
+                                        <td>benign</td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">2</td>
+                                        <td class="numeric">2</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td>benign</td>
+                                      </tr>
+                                      <tr>
+                                        <td>4</td>
+                                        <td class="numeric">6</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">4</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">1</td>
+                                        <td>benign</td>
+                                      </tr>
+                                      <tr>
+                                        <td>5</td>
+                                        <td class="numeric">4</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">2</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td>benign</td>
+                                      </tr>
+                                      <tr>
+                                        <td>6</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">10</td>
+                                        <td class="numeric">10</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">10</td>
+                                        <td class="numeric">9</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">1</td>
+                                        <td>malignant</td>
+                                      </tr>
+                              
+                                    </tbody>
+                                  </table>
+                                </section>
+                              </div>
+                              <!-- /content-panel -->
+                            </div>
+                            <!-- /col-lg-4 -->
+                          </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseTwo">
+                    <h3 style="cursor:pointer">> 2. Principal Component Table</h3> 
+                    </a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>&emsp; View of the first few columns after PCA. Note the 9 principal components to match the 9 independent variables.  
+                    </p>
+                      <br>
+                          <div class="row mt">
+                            <div class="col-lg-12">
+                              <div class="">
+                                <section id="unseen">
+                                  <table class="table table-bordered table-striped ">
+                                    <thead>
+                                      <tr>
+                                        <th>ID</th>
+                                        <th class="numeric">PC.1</th>
+                                        <th class="numeric">PC.2</th>
+                                        <th class="numeric">PC.3</th>
+                                        <th class="numeric">PC.4</th>
+                                        <th class="numeric">PC.5</th>
+                                        <th class="numeric">PC.6</th>
+                                        <th class="numeric">PC.7</th>
+                                        <th class="numeric">PC.8</th>
+                                        <th class="numeric">PC.9</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>1</td>
+                                        <td class="numeric">1.46909</td>
+                                        <td class="numeric">-0.1042</td>
+                                        <td class="numeric">0.56527</td>
+                                        <td class="numeric">-0.03194</td>
+                                        <td class="numeric">0.15089</td>
+                                        <td class="numeric">-0.05998</td>
+                                        <td class="numeric">-0.34915</td>
+                                        <td class="numeric">0.42004</td>
+                                        <td class="numeric">0.00569</td>
+                                      </tr>
+                                      <tr>
+                                        <td>2</td>
+                                        <td class="numeric">-1.44099</td>
+                                        <td class="numeric">-0.56972</td>
+                                        <td class="numeric">-0.23643</td>
+                                        <td class="numeric">-0.4778</td>
+                                        <td class="numeric">-1.64188</td>
+                                        <td class="numeric">0.48268</td>
+                                        <td class="numeric">1.11508</td>
+                                        <td class="numeric">0.3793</td>
+                                        <td class="numeric">-0.02341</td>
+                                      </tr>
+                                      <tr>
+                                        <td>3</td>
+                                        <td class="numeric">1.59131</td>
+                                        <td class="numeric">-0.07606</td>
+                                        <td class="numeric">-0.04882</td>
+                                        <td class="numeric">-0.09232</td>
+                                        <td class="numeric">0.0597</td>
+                                        <td class="numeric">0.27917</td>
+                                        <td class="numeric">-0.23257</td>
+                                        <td class="numeric">0.20965</td>
+                                        <td class="numeric">-0.01336</td>
+                                      </tr>
+                                      <td>4</td>
+                                      <td class="numeric">-1.47873</td>
+                                      <td class="numeric">-0.52806</td>
+                                      <td class="numeric">0.60261</td>
+                                      <td class="numeric">1.40979</td>
+                                      <td class="numeric">0.56033</td>
+                                      <td class="numeric">-0.06298</td>
+                                      <td class="numeric">0.21096</td>
+                                      <td class="numeric">-1.60592</td>
+                                      <td class="numeric">-0.18264</td>
+                                      </tr>
+                                      <tr>
+                                        <td>5</td>
+                                        <td class="numeric">1.34388</td>
+                                        <td class="numeric">-0.09065</td>
+                                        <td class="numeric">-0.02998</td>
+                                        <td class="numeric">-0.33804</td>
+                                        <td class="numeric">0.10875</td>
+                                        <td class="numeric">-0.43105</td>
+                                        <td class="numeric">-0.25967</td>
+                                        <td class="numeric">0.44633</td>
+                                        <td class="numeric">0.03879</td>
+                                      </tr>
+                                      <tr>
+                                        <td>6</td>
+                                        <td class="numeric">-5.01065</td>
+                                        <td class="numeric">-1.53379</td>
+                                        <td class="numeric">-0.46067</td>
+                                        <td class="numeric">0.29517</td>
+                                        <td class="numeric">-0.39156</td>
+                                        <td class="numeric">-0.11527</td>
+                                        <td class="numeric">-0.38425</td>
+                                        <td class="numeric">-0.14899</td>
+                                        <td class="numeric">0.04295</td>
+                                      </tr>
+                              
+                                    </tbody>
+                                  </table>
+                                </section>
+                              </div>
+                              <!-- /content-panel -->
+                            </div>
+                            <!-- /col-lg-4 -->
+                          </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseThree">
+                    <h3 style="cursor:pointer">> 3. Variance Explained</h3> 
+                    </a>
+                </div>
+                <div id="collapseThree" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>&emsp; Once again, these are linear transformations of the entire original dataset, and therefore PC1 is not related to the first variable per se. However, the principal components are ordinal and thus PC1 explains the most variance in the entire data set. The variance explained for each principal component is shown below: 
+                    </p>
+                      <br>
+                          <div class="row mt">
+                            <div class="col-lg-12">
+                              <div class="">
+                                <section id="unseen">
+                                  <table class="table table-bordered table-striped ">
+                                    <thead>
+                                      <tr>
+                                        <th>Value</th>
+                                        <th class="numeric">PC.1</th>
+                                        <th class="numeric">PC.2</th>
+                                        <th class="numeric">PC.3</th>
+                                        <th class="numeric">PC.4</th>
+                                        <th class="numeric">PC.5</th>
+                                        <th class="numeric">PC.6</th>
+                                        <th class="numeric">PC.7</th>
+                                        <th class="numeric">PC.8</th>
+                                        <th class="numeric">PC.9</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Standard deviation</td>
+                                        <td class="numeric">2.4289</td>
+                                        <td class="numeric">0.8809</td>
+                                        <td class="numeric">0.7343</td>
+                                        <td class="numeric">0.678</td>
+                                        <td class="numeric">0.6167</td>
+                                        <td class="numeric">0.5494</td>
+                                        <td class="numeric">0.5426</td>
+                                        <td class="numeric">0.5106</td>
+                                        <td class="numeric">0.2973</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Proportion of Variance</td>
+                                        <td class="numeric">0.6555</td>
+                                        <td class="numeric">0.0862</td>
+                                        <td class="numeric">0.0599</td>
+                                        <td class="numeric">0.0511</td>
+                                        <td class="numeric">0.0423</td>
+                                        <td class="numeric">0.0335</td>
+                                        <td class="numeric">0.0327</td>
+                                        <td class="numeric">0.029</td>
+                                        <td class="numeric">0.0098</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Cumulative Proportion</td>
+                                        <td class="numeric">0.6555</td>
+                                        <td class="numeric">0.7417</td>
+                                        <td class="numeric">0.8016</td>
+                                        <td class="numeric">0.8527</td>
+                                        <td class="numeric">0.895</td>
+                                        <td class="numeric">0.9285</td>
+                                        <td class="numeric">0.9612</td>
+                                        <td class="numeric">0.9902</td>
+                                        <td class="numeric">1</td>
+                                      </tr>
+                                      
+                              
+                                    </tbody>
+                                  </table>
+                                </section>
+                              </div>
+                              <!-- /content-panel -->
+                            </div>
+                            <!-- /col-lg-4 -->
+                          </div>
+                          <p>&emsp; PC1 explains approximately 65.5% of the variance in the original data. Let’s plot PC1 and PC2 and compare them to the original class of data.
+                            From this plot1 you can see how good of a predictor the 1st principal component is (shown along the x-axis). Principal components are new features created by the original dataset and can be excellent descriptions of the original data:
+                          </p>
+                          <br>
+                          <span class="photo"><img alt="avatar" src="img/pc1_pc2.png" width="800" height="400"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseFour">
+                    <h3 style="cursor:pointer">> 4. What are the benefits of PCA?</h3> 
+                    </a>
+                </div>
+                <div id="collapseFour" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    
+                      <h5>Dimensionality Reduction</h5>
+                      <ul>
+                        <li>- The dimensionality of a dataset is essentially the number of variables (i.e columns) in a dataset. In table1 above there are 9 independent variables. While, 2-dimensional data sets are relatively easy to visualize (e.g. plot1 above),  data sets beyond 2 or 3 dimensions become increasingly difficult to conceptualize. You cannot simply plot a 9-dimensional data set. </li>
+                        <li>- PCA Dimensionality reduction can have many benefits, including: </li>
+                      </ul>
+                      <ol>
+                          <li> Faster processing time / less storage space </li> 
+                          <li> Helps with overfitting the model by reducing noise</li> 
+                          <li> Helps to identify relationships in the data set</li> 
+                          <li> Reduces multicollinearity between similar attributes</li> 
+                          <li> However, as you lose dimensions, you obviously lose some information about the dataset. The goal of PCA is to reduce dimensionality in the dataset while maintaining as much information as possible. </li> 
+                        </ol>
+                        <ul>
+                          <li>*Note, Dimensionality reduction in PCA is not selecting the best subset of the original variables in a dataset. PCA creates new variables using a linear transformation of the original data set, and then orders these new variables by the amount of variability they explain in the data set. The new data points can be mapped back to the original data, but are not the original isolated variables (e.g. Cell.size, Cell.shape). These “new” variables are linear transformations of the original variables and are difficult to interpret in isolation. 
+                          </li>
+                          </ul> 
+                      
+                    
+                    <br>
+                    <h5>Variable Relationships</h5>
+                    <ul>                  
+                      <li>- PCA explains the relationship between the independent variables in a dataset by finding the eigenvectors of the Covariance or Correlation matrix. A covariance matrix shows the relationship between a set of variables. We’ll discuss eigenvectors and covariance matrices in more detail, but the critical point is that PCA explains the relationships between the independent variables (e.g. Cell.size, Cell.shape, Marg.adhesion), and does not explain the relationship to the target variable (e.g. class). This makes PCA an unsupervised model. 
+                      </li>
+                      <li>- This also implies that PCA is a type of feature extraction. It is creating features, from the original data that explain variance in the original data set.
+                      </li>
+                       
+
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseFive">
+                    <h3 style="cursor:pointer">> 5. Manually Illustrating PCA?</h3> 
+                    </a>
+                </div>
+                <div id="collapseFive" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>
+                      &emsp; PCA is a multi step process that involves standardization, covariance matrices, and eigenvectors/eigenvalues. For purposes of illustration,  I’ll use a subset of two dimensions from the BreastCancer dataset shown above. These may not be an ideal candidate for PCA, but they help to illustrate the step-by-step process for developing principal components and the same rules apply to a higher-dimensional data set. I’ve randomly selected the following data:
+                    </p>
+                    <div class="row mt">
+                            <div class="col-lg-12">
+                              <div class="">
+                                <section id="unseen">
+                                  <table class="table table-bordered table-striped ">
+                                    <tbody>
+                                      <tr>
+                                        <td>Cell.size</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">6</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">2</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">3</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Cell.shape</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">6</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">7</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">8</td>
+                                        <td class="numeric">4</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">5</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                        <td class="numeric">1</td>
+                                      </tr>
+                                      
+                              
+                                    </tbody>
+                                  </table>
+
+                                
+                                <h5>Standardization</h5>
+                                <p>&emsp;The first step in PCA is to standardize the data. The relationship between Cell.shape and Cell.size seem pretty consistent, but imagine if Cell.size used an arbitrary measurement unit that was 1000x smaller. I.e. size 7y = size 7000x, e.g. millimeters to meters. While these sizes are the exact same in reality, this would affect the calculation of our residuals and variance. As we’ll discuss with Eigenvectors, the goal of principal components is to minimize orthogonal residuals and maximize variance. It is necessary to have the data on a standardized scale to do this.  We can standardize our data by subtracting the mean of each variable and dividing by the standard deviation. The standardized variables using the data above are: 
+                                </p>
+                                <table class="table table-bordered table-striped ">
+                                  <tbody>
+                                    <tr>
+                                      <td>Size.Standardized</td>
+                                      <td class="numeric">1.15</td>
+                                      <td class="numeric">0.82</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">1.15</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.49</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.16</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.16</td>
+                                      <td class="numeric">-0.82</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Shape.Standardized</td>
+                                      <td class="numeric">1.15</td>
+                                      <td class="numeric">0.82</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">1.15</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">1.47</td>
+                                      <td class="numeric">-0.49</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.16</td>
+                                      <td class="numeric">-0.82</td>
+                                      <td class="numeric">-0.16</td>
+                                      <td class="numeric">-0.82</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <p>&emsp; 
+                                  The mean of each variable is 0, and the standard deviation is 1, hence standardization. The  original and standardized variables are below. The points are transparent to help see density.
+                                </p>
+                                <br>
+                          <span class="photo"><img alt="avatar" src="img/standard_plot.png" width="800" height="400"></span>
+                              </section>
+                              </div>
+                              <!-- /content-panel -->
+                            </div>
+                            <!-- /col-lg-4 -->
+                          </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseSix">
+                    <h3 style="cursor:pointer">> 6. Calculate Covariance</h3> 
+                    </a>
+                </div>
+                <div id="collapseSix" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <p>
+                      &emsp; PCA is a multi step process that involves standardization, covariance matrices, and eigenvectors/eigenvalues. For purposes of illustration,  I’ll use a subset of two dimensions from the BreastCancer dataset shown above. These may not be an ideal candidate for PCA, but they help to illustrate the step-by-step process for developing principal components and the same rules apply to a higher-dimensional data set. I’ve randomly selected the following data:
+                    </p>
+                    <div class="row mt">
+                            <div class="col-lg-12">
+                              <div class="">
+                                <section id="unseen">
+                                <h5>Covariance</h5>
+                                <p>&emsp;
+                                  After standardizing the data, we calculate its Covariance Matrix. This is a 2x2 matrix in this case. The covariance matrix is an n x n Matrix, where n represents the number of variables. Covariance measures how two variables move together. For example, as height increases does weight also increase?  To calculate covariance of (X,Y): 
+                                </p>
+                                <span class="photo"><img alt="avatar" src="img/cov_img.png" width="400" height="200"></span>
+                                <p>Covariance Steps</p>  
+                                <ol>
+                                  <li>Take the difference of x against the mean of x and multiply it  by the difference of y and the mean of y</li>
+                                  <li>Sum all these up </li>
+                                  <li>Divide by the number of records (less 1, for sample sizes)</li>
+                                </ol>
+                                <p>&emsp;Using our standardized data in Table5 we calculate our covariance matrix, showing us the correlation between the variables. Note that the diagonal here is the variance, since the covariance of the same variable is just its variance. </p>
+                                <table class="table table-bordered table-striped ">
+                                    <tbody>
+                                      <tr>
+                                        <th>Covariance Table</th>
+                                        <th class="numeric">cell.size</th>
+                                        <th class="numeric">cell.shape</th>
+                                      </tr>
+                                      <tr>
+                                        <td>Cell.size</td>
+                                        <td class="numeric">1.00</td>
+                                        <td class="numeric">0.96</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Cell.shape</td>
+                                        <td class="numeric">0.96</td>
+                                        <td class="numeric">1.00</td>
+                                      </tr>
+                                      
+                              
+                                    </tbody>
+                                  </table>
+                              </section>
+                              </div>
+                              <!-- /content-panel -->
+                            </div>
+                            <!-- /col-lg-4 -->
+                          </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseSeven">
+                  <h3 style="cursor:pointer">> 7. What's an Eigenvector?</h3> 
+                  </a>
+              </div>
+              <div id="collapseSeven" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <p>
+                    &emsp; Once we have the standardized covariance matrix, we now search for the eigenvectors and eigenvalues of the matrix. Eigenvectors carry a unique property that when you transform the original dataset against the eigenvector you maximize the variance and simultaneously minimize the orthogonal residuals. 
+
+                  </p>
+                  <div class="row mt">
+                    <div class="col-lg-12">
+                      <div class="">
+                        <section id="unseen">
+                          <h5>Why would you want to maximize the variance?</h5>
+                            <p>&emsp;
+                              Maximizing the variance helps us to better distinguish our data from one another. For example, imagine you are trying to build a model that classifies types of cars with 5 variables:
+                              <ol>
+                                <li>Price</li>
+                                <li>Horsepower</li>
+                                <li>0-60 time</li>
+                                <li># of Wheels</li>
+                                <li>Miles per gallon</li>
+                              </ol>
+                              <br>
+                              The variable “Wheels” is likely to have low variance, since most cars have 4 wheels, and thus will not be a good attribute to classify different types of cars. “Price” on the other hand may vary widely, and thus help you to distinguish a “Honda” from a “Mercedes”. Variables that help us maximize variance provide excellent information for classification. 
+                            </p>
+                          <h5>So, what's an eigenvector?</h5>
+                          <p>An eigenvector is a vector that when multiplied by a matrix remains a scalar factor of that original vector. An n x n matrix will have n eigenvectors. A dataset with 10-dimensions will have 10 eigenvectors and a dataset with 2 variables will have two eigenvectors. 
+                            <br>
+                            The following example matrix provides a simple illustration of eigenvectors
+
+                          </p>
+                              <table class="table table-bordered table-striped ">
+                                  <tbody>
+                                    <tr>
+                                      <th>Matrix1</th>
+                                      <th class="numeric">Column 1</th>
+                                      <th class="numeric">Column 2</th>
+                                    </tr>
+                                    <tr>
+                                      <td>Row 1</td>
+                                      <td class="numeric">2</td>
+                                      <td class="numeric">3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Row 2</td>
+                                      <td class="numeric">2</td>
+                                      <td class="numeric">1</td>
+                                    </tr>
+                                    
+                            
+                                  </tbody>
+                                </table>
+                              <p>If we multiply Matrix1 by the vector [3,2], we get 2*3 + 3* 2 = 12 and 2*3 + 1* 2 = 8  or [12,8] or a vector:</p>
+                              <table class="table table-bordered table-striped ">
+                                <tbody>
+                                  <tr>
+                                    <th>Vector1</th>
+                                    <th class="numeric">Column 1</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Row 1</td>
+                                    <td class="numeric">12</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Row 2</td>
+                                    <td class="numeric">8</td>
+                                  </tr>
+                                  
+                          
+                                </tbody>
+                              </table>
+                              <p>This vector could also be written as  4 * [3,2]: </p>
+                              <table class="table table-bordered table-striped ">
+                                <tbody>
+                                  <tr>
+                                    <th>Vector (4*)</th>
+                                    <th class="numeric">Column 1</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Row 1</td>
+                                    <td class="numeric">3</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Row 2</td>
+                                    <td class="numeric">2</td>
+                                  </tr>
+                                  
+                          
+                                </tbody>
+                              </table>
+                              <p>
+                                Therefore [3,2] is an eigenvector of Matrix1, since when we multiplied 
+                                the original vector [3,2] by Matrix1, the resulting vector [12,8] is a scalar of the original vector [3,2], i.e. 4*[3,2].  In this case, 4 is the eigenvalue of eigenvector [3,2] for Matrix1. When we are doing PCA, we are calculating all the eigenvectors of the covariance matrix and then order 
+                                the eigenvectors by their associated eigenvalues, largest to smallest. 
+                              </p>
+                              <br>
+                              <h5>What are the eigenvector of the sample breast cancer data?</h5>
+                              <p>Using R, we calculate the eigenvectors and eigenvalues of our covariance matrix</p>
+                              <table class="table table-bordered table-striped ">
+                                <tbody>
+                                  <tr>
+                                    <th>Eigenvalues</th>
+                                    <th class="numeric"></th>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td class="numeric"> 1.96</td>
+                                    <td class="numeric">0.037</td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                              <br>
+                              <table class="table table-bordered table-striped ">
+                                <tbody>
+                                  <tr>
+                                    <th>Eigenvectors</th>
+                                    <th class="numeric">[,1]</th>
+                                    <th class="numeric">[,2]</th>
+                                  </tr>
+                                  <tr>
+                                    <td>[1,]</td>
+                                    <td class="numeric">0.707</td>
+                                    <td class="numeric">-0.707</td>
+                                  </tr>
+                                  <tr>
+                                    <td>[2,]</td>
+                                    <td class="numeric">0.707</td>
+                                    <td class="numeric">0.707</td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                              <p>We can easily calculate the slope of the eigenvector and plot the eigenvector back on our standardized data set. 
+                                The slope of the first eigenvector from Matrix3 is simply [2,1] / [1,1]  = 1</p>
+
+                                <span class="photo"><img alt="avatar" src="img/eigen_plot1.png" width="400" height="400"></span>
+                            </section>
+                            </div>
+                            <!-- /content-panel -->
+                        </div>
+                          <!-- /col-lg-4 -->
+                        </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseEight">
+                  <h3 style="cursor:pointer">> 8. Eigenvector vs. Best Fit line?</h3> 
+                  </a>
+              </div>
+              <div id="collapseEight" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <p>
+                    &emsp; The eigenvector appears very similar to the best-fit line, 
+                    and its important to distinguish the two.  
+                    Best-fit lines in linear models also perform a linear transformation on the data. 
+                    The best fit line will minimize residuals vertically, along the y-axis, 
+                    since this is the target variable, whereas the eigenvector minimizes residuals orthogonally. 
+                    I’ve plotted a comparison of the two below to help illustrate this point. 
+                    The eigenvector is on the graph on the right, 
+                    and you can see it is slightly different than the best fit line. 
+                    Also note the orthogonal residual lines on the right versus the vertical residual lines on the left. 
+                  </p>
+                  <div class="row mt">
+                    <div class="col-lg-12">
+                      <div class="">
+                        <section id="unseen">
+                          <span class="photo"><img alt="avatar" src="img/eigen_vs_best_fit.png" width="800" height="400"></span>
+                            <p>&emsp;
+                              When matrices are transformed by eigenvectors two separate, but related, events occur: 
+                              <ol>
+                                <li>The variance is maximized along the new vector (remember high variance is good for classification)</li>
+                                <li></li>The variance is maximized along the new vector (remember high variance is good for classification)</li>
+                              </ol>
+                              <br>
+                              To better understand these two points, 
+                              I have rotated the vector in order to compare different residuals and 
+                              variance for different vectors. The eigenvector is on the far right. 
+                              This graph has the smallest residual (i.e. the dotted lines) and
+                               also the widest spread along the vector line. This is the reason 
+                               eigenvectors are so valuable, 
+                              it minimizes orthogonal residuals and maximizes variance.
+                            </p>
+                            <h5>Rotated Vectors Illustration</h5>
+                            <span class="photo"><img alt="avatar" src="img/eigen_rotate.png" width="800" height="400"></span>  
+                            <h5>Principal Components</h5>
+                            <p>To get our principal components, we multiply our standardized values (table5 above) 
+                              by the eigenvectors (Matrix5 above). The largest eigenvalue will be our 
+                              first Principal Component as it explains the most variance in the data. 
+                              The first eigenvalue (~1.96) is the largest
+                              and thus we use the first eigenvector for our first principal component. </p>
+                              <table class="table table-bordered table-striped ">
+                                <tbody>
+                                  <tr>
+                                    <td>PC1</td>
+                                    <td class="numeric">1.61</td>
+                                    <td class="numeric">1.15</td>
+                                    <td class="numeric">1.85</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">1.61</td>
+                                    <td class="numeric">2.08</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">2.08</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">2.08</td>
+                                    <td class="numeric">-0.24</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">0.22</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">-0.71</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">-1.17</td>
+                                    <td class="numeric">-1.17</td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>PC2</td>
+                                    <td class="numeric">-0.01</td>
+                                    <td class="numeric">-0.01</td>
+                                    <td class="numeric">-0.24</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.01</td>
+                                    <td class="numeric">-0.01</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.01</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.01</td>
+                                    <td class="numeric">0.45</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">0.45</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.48</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.02</td>
+                                    <td class="numeric">-0.02</td>
+
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                          <p>
+                            Since the 1st eigenvalue is considerably larger than the 2nd eigenvalue 
+                            it explains the majority of the variation in the dataset. We can see this 
+                            by plotting the two principal components and coloring in the response variable. 
+                            <br>
+                            The plot below shows. PC1 does a good job at separating the target variable.
+                          </p>
+                          <span class="photo"><img alt="avatar" src="img/pc1_vs_pc2.png" width="400" height="400"></span>
+                              
+                            </section>
+                            </div>
+                            <!-- /content-panel -->
+                        </div>
+                          <!-- /col-lg-4 -->
+                        </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="faq.html#collapseNine">
+                  <h3 style="cursor:pointer">> 9. Summary</h3> 
+                  </a>
+              </div>
+              <div id="collapseNine" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <div class="row mt">
+                    <div class="col-lg-12">
+                      <div class="">
+                        <section id="unseen">
+                            <p>&emsp;
+                              <ol>
+                                <li>Eigenvectors are used to transform matrices in a manner that maximizes explained variance while minimizing residual loss.</li>
+                                <li>They are calculated by finding the eigenvectors of the standardized covariance matrix.
+                                  Eigenvectors are special vectors that when transformed by a matrix are a scalar factor of the original vector.
+                                </li>
+                                <li>An n x n matrix will have n eigenvectors.</li>
+                                <li>Eigenvectors are ordered by the size of their eigenvalues, and the largest eigenvalue explains the most variance. </li>
+                                <li>Eigenvectors are multiplied by the standardized data to create the Principal Components. </li>
+                                <li>Principal Components are used to explain variance between variables in a dataset and are new features extracted from a dataset. Thus, they are unsupervised. </li>
+                              </ol>
+                              <br>
+                              <h5>When PCA should be used? </h5>
+                            <p>High dimensional data sets that show high correlation are good candidates. For example if the standardized covariance matrix shows many variables higher 
+                                than .3 correlation than that may be a case for using PCA. </p>
+                              
+                            
+                        </section>
+                      </div>
+                            <!-- /content-panel -->
+                      </div>
+                          <!-- /col-lg-4 -->
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- end accordion -->
+          </div>
+          <!-- col-md-10 -->
+        </div>
+        <!--  /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <div class="credits">
+          Created by TyStats
+        </div>
+        <a href="faq.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="lib/jquery.scrollTo.min.js"></script>
+  <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="lib/common-scripts.js"></script>
+  <!--script for this page-->
+
+</body>
+
+</html>

@@ -10,6 +10,8 @@ library(extrafont)
 library(zoo)
 library(transformr)
 library(rvest)
+library(scales)
+library(gridExtra)
 
 script_url <- "https://www.rev.com/blog/transcripts/kamala-harris-mike-pence-2020-vice-presidential-debate-transcript"
 
@@ -117,7 +119,7 @@ View(all_time)
 all_time$speaker <- factor(all_time$speaker,levels = c("sp", "mp", "kh"))
 
 #who spoke the most?
-all_time %>% 
+vp_bar <- all_time %>% 
   group_by(speaker) %>% 
   count() %>%
   arrange(-n) %>% 
@@ -130,10 +132,39 @@ all_time %>%
                    labels=c("Susan Page","Mike Pence","Kamala Harris")) +
   scale_fill_manual(values = c("grey", "red", "blue")) +
   theme_bw() +
-  ggtitle("Number of Turns Speaking")+
-  theme(legend.position = "none")
+  ggtitle("Number of Turns Speaking") +
+  theme(legend.position = "none", 
+        plot.title=element_text(family="mono"),
+        text = element_text(family = "mono"))
 
-View(all_time)
+#pie colors
+mycols <- c("grey", "red", "blue")
+
+#Pi3 Chart
+vp_pie <- all_time %>% 
+  group_by(speaker) %>% 
+  count() %>%
+  arrange(-n) %>% 
+  ungroup() %>% 
+  mutate(n_sum = sum(n)) %>% 
+  arrange(desc(speaker)) %>%
+  mutate(prop = n / n_sum *100) %>%
+  mutate(lab.ypos = cumsum(prop) - 0.5*prop) %>% 
+  mutate(prop_form = round(prop,2)) %>% 
+ggplot(aes(x="", y=n, fill=speaker)) +
+  geom_bar(stat="identity", width=1, color = "white") +
+  coord_polar("y", start=0) +
+  theme_void() + 
+  theme(legend.position="none") +
+  geom_text(aes(x = c(1.1,1.1,1.1),y = c(40,150,270) , label = paste0(c("Kamala Harris\n","Mike Pence\n","Susan Page\n")," ",prop_form,"%")), color = "white", size=4, fontface = "bold", family = "mono")+
+  scale_fill_manual(values = mycols) +
+  theme_void() + 
+  theme(legend.position="none")
+            
+
+#View(all_time)
+grid.arrange(vp_pie, vp_bar, ncol = 2)
+
 
 #average speaking time?
 all_time %>% 
